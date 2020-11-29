@@ -15,5 +15,8 @@
   "bugs": {
     "url": "https://github.com/Marineincera/EasyList-Back/issues"
   },
-  "homepage": "https://github.com/Marineincera/EasyList-Back#readme"
+  "homepage": "https://github.com/Marineincera/EasyList-Back#readme",
+  "dependencies": {
+    "typeorm": "^0.2.29"
+  }
 }
