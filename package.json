@@ -17,6 +17,7 @@
   },
   "homepage": "https://github.com/Marineincera/EasyList-Back#readme",
   "dependencies": {
+    "express": "^4.17.1",
     "typeorm": "^0.2.29"
   }
 }
