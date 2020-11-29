@@ -3,9 +3,6 @@
   "version": "1.0.0",
   "description": "",
   "main": "index.js",
-  "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
-  },
   "repository": {
     "type": "git",
     "url": "git+https://github.com/Marineincera/EasyList-Back.git"
@@ -17,7 +14,31 @@
   },
   "homepage": "https://github.com/Marineincera/EasyList-Back#readme",
   "dependencies": {
+    "cors": "^2.8.5",
     "express": "^4.17.1",
-    "typeorm": "^0.2.29"
+    "helmet": "^4.2.0",
+    "typeorm": "^0.2.29",
+    "@types/mysql": "^2.15.15",
+    "@types/helmet": "0.0.48",
+    "mysql": "^2.17.1"
+  },
+  "devDependencies": {
+    "@types/cors": "^2.8.6",
+    "@types/express": "^4.17.7",
+    "@types/node": "^13.13.14",
+    "nodemon": "^2.0.4",
+    "rimraf": "^3.0.2",
+    "ts-node": "^8.10.2",
+    "tsconfig-paths": "^3.9.0",
+    "tslint": "^6.1.2",
+    "typescript": "^3.9.7"
+  },
+  "scripts": {
+    "start": "npm run build && node build/index.js",
+    "start:dev": "nodemon",
+    "start:debug": "nodemon --config nodemon-debug.json",
+    "build": "rimraf ./build && tsc",
+    "lint": "tslint -p tsconfig.json -c tslint.json",
+    "test": "echo \"Error: no test specified\" && exit 1"
   }
 }
