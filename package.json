@@ -1,0 +1,19 @@
+{
+  "name": "easylist-back",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Marineincera/EasyList-Back.git"
+  },
+  "author": "M Incera",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/Marineincera/EasyList-Back/issues"
+  },
+  "homepage": "https://github.com/Marineincera/EasyList-Back#readme"
+}
