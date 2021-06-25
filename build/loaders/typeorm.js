@@ -36,16 +36,17 @@ var __generator = (this && this.__generator) || function (thisArg, body) {
     }
 };
 Object.defineProperty(exports, "__esModule", { value: true });
-var typegroup_entity_1 = require("../entities/typegroup.entity");
 var typeorm_1 = require("typeorm");
+var typegroup_entity_1 = require("../entities/typegroup.entity");
 exports.default = (function () { return __awaiter(void 0, void 0, void 0, function () {
     return __generator(this, function (_a) {
         switch (_a.label) {
             case 0: return [4 /*yield*/, typeorm_1.createConnection({
                     type: "mysql",
                     port: 3306,
-                    username: "root",
-                    database: "easylist",
+                    username: process.env.EASYLIST_USER,
+                    database: process.env.EASYLIST_DB,
+                    password: process.env.EASYLIST_PASSWORD,
                     entities: [
                         typegroup_entity_1.Typegroup
                     ],

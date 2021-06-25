@@ -40,18 +40,26 @@ var __importDefault = (this && this.__importDefault) || function (mod) {
 };
 Object.defineProperty(exports, "__esModule", { value: true });
 var express_1 = __importDefault(require("express"));
+var loaders_1 = __importDefault(require("./loaders"));
 var typegroup_controller_1 = require("./controllers/typegroup.controller");
 function startServer() {
     return __awaiter(this, void 0, void 0, function () {
         var app;
         return __generator(this, function (_a) {
-            app = express_1.default();
-            // Chargement des différent loader
-            // Ajout des différentes route de votre application
-            typegroup_controller_1.TypegroupController(app);
-            // Démarrage du serveur une fois que tout est correctement init
-            app.listen(3000, function () { return console.log("Express server is running"); });
-            return [2 /*return*/];
+            switch (_a.label) {
+                case 0:
+                    app = express_1.default();
+                    // Chargement des différent loader
+                    return [4 /*yield*/, loaders_1.default(app)];
+                case 1:
+                    // Chargement des différent loader
+                    _a.sent();
+                    // Ajout des différentes route de votre application
+                    typegroup_controller_1.TypegroupController(app);
+                    // Démarrage du serveur une fois que tout est correctement init
+                    app.listen(3000, function () { return console.log("Express server is running"); });
+                    return [2 /*return*/];
+            }
         });
     });
 }

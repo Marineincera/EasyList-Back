@@ -5,8 +5,9 @@ export default async () => {
     await createConnection({
       type: "mysql",
       port: 3306,
-      username: "",
-      database: "",
+      username: process.env.EASYLIST_USER,
+      database: process.env.EASYLIST_DB,
+
       entities: [
         Typegroup
       ],
