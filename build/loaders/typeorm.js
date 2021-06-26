@@ -45,7 +45,7 @@ exports.default = (function () { return __awaiter(void 0, void 0, void 0, functi
                     type: "mysql",
                     port: 3306,
                     username: process.env.EASYLIST_USER,
-                    database: process.env.EASYLIST_DB,
+                    database: "easylist",
                     password: process.env.EASYLIST_PASSWORD,
                     entities: [
                         typegroup_entity_1.Typegroup
