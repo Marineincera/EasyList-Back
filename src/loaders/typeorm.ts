@@ -1,3 +1,4 @@
+import { List } from "src/entities/list.entity";
 import { User } from "src/entities/user.entity";
 import { createConnection } from "typeorm";
 import { Typegroup } from "../entities/typegroup.entity";
@@ -11,7 +12,8 @@ export default async () => {
       password : process.env.EASYLIST_PASSWORD,
       entities: [
         Typegroup,
-        User
+        User,
+        List
       ],
       synchronize: true,
     });

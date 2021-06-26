@@ -1,4 +1,5 @@
-import { Column, Entity, PrimaryGeneratedColumn } from "typeorm";
+import { Column, Entity, OneToMany, PrimaryGeneratedColumn } from "typeorm";
+import { List } from "./list.entity";
 
 
 @Entity("user")
@@ -20,5 +21,8 @@ export class User {
 
   @Column({ type: "varchar", length: 505, nullable: true })
   avatar!: string;
+
+  @OneToMany(type => List, list => list.creator, { onDelete: 'CASCADE' })
+  lists?: List[];
 
 }
