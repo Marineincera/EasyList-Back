@@ -1,4 +1,4 @@
-import { Child } from 'src/entities/child.entity';
+import { Child } from '../entities/child.entity';
 import {EntityRepository, Repository} from 'typeorm';
 
 
