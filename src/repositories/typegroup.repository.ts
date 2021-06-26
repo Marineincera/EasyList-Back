@@ -1,4 +1,3 @@
-  
 import {EntityRepository, Repository} from 'typeorm';
 import { Typegroup } from './../entities/typegroup.entity';
 
