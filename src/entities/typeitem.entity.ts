@@ -1,6 +1,6 @@
 import { Column, Entity, OneToMany, PrimaryGeneratedColumn } from "typeorm";
 import { Item } from "./item.entity";
-import { List } from "./list.entity";
+
 
 
 @Entity("typeitem")
