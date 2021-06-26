@@ -1,5 +1,6 @@
 import { Child } from "src/entities/child.entity";
 import { List } from "src/entities/list.entity";
+import { Typelist } from "src/entities/typelist.entity";
 import { User } from "src/entities/user.entity";
 import { createConnection } from "typeorm";
 import { Typegroup } from "../entities/typegroup.entity";
@@ -15,7 +16,8 @@ export default async () => {
         Typegroup,
         User,
         List,
-        Child
+        Child,
+        Typelist
       ],
       synchronize: true,
     });

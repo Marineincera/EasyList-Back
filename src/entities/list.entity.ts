@@ -1,5 +1,6 @@
 import { Column, Entity, ManyToOne, PrimaryGeneratedColumn } from "typeorm";
 import { Child } from "./child.entity";
+import { Typelist } from "./typelist.entity";
 import { User } from "./user.entity";
 
 export enum StatusList {
@@ -26,4 +27,7 @@ export class List {
 
   @ManyToOne(type => Child, Child => Child.lists, { onDelete: 'CASCADE' })
   childOwner?: Child;
+
+  @ManyToOne(type => Typelist, Typelist => Typelist.lists, { onDelete: 'CASCADE' })
+  typelist!: Typelist;
 }
