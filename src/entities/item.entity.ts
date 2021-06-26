@@ -1,8 +1,6 @@
 import { Column, Entity, JoinTable, ManyToMany, ManyToOne, OneToMany, PrimaryGeneratedColumn } from "typeorm";
-import { Child } from "./child.entity";
 import { List } from "./list.entity";
 import { Typeitem } from "./typeitem.entity";
-import { Typelist } from "./typelist.entity";
 import { User } from "./user.entity";
 
 export enum LevelItem {

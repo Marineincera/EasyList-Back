@@ -1,5 +1,7 @@
-import { Column, Entity, ManyToOne, PrimaryGeneratedColumn } from "typeorm";
+import { Column, Entity, JoinTable, ManyToMany, ManyToOne, OneToMany, PrimaryGeneratedColumn } from "typeorm";
+import { Groupdemand } from "./groupdemand.entity";
 import { Typegroup } from "./typegroup.entity";
+import { User } from "./user.entity";
 
 
 @Entity("groupevent")
@@ -16,4 +18,13 @@ export class Groupevent {
   @ManyToOne(type => Typegroup, typegroup => typegroup.groupevents, { onDelete: 'CASCADE' })
   typegroup!: Typegroup;
 
+  @ManyToOne(type => User, user => user.groupeventsManaged, { onDelete: 'CASCADE' })
+  admin!: User;
+
+  @ManyToMany(type => User, user => user.groupeventsList)
+  @JoinTable()
+  members!: User[];
+
+  @OneToMany(type => Groupdemand, groupdemand => groupdemand.groupevent, { onDelete: 'CASCADE' })
+  groupdemands?: Groupdemand[];
 }

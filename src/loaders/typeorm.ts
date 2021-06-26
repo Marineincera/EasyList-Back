@@ -1,4 +1,5 @@
 import { Child } from "src/entities/child.entity";
+import { Groupdemand } from "src/entities/groupdemand.entity";
 import { Groupevent } from "src/entities/groupevent.entity";
 import { Item } from "src/entities/item.entity";
 import { List } from "src/entities/list.entity";
@@ -23,7 +24,8 @@ export default async () => {
         Typelist,
         Item,
         Typeitem,
-        Groupevent
+        Groupevent,
+        Groupdemand
       ],
       synchronize: true,
     });

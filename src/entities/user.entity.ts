@@ -1,5 +1,7 @@
 import { Column, Entity, ManyToMany, OneToMany, PrimaryGeneratedColumn } from "typeorm";
 import { Child } from "./child.entity";
+import { Groupdemand } from "./groupdemand.entity";
+import { Groupevent } from "./groupevent.entity";
 import { Item } from "./item.entity";
 import { List } from "./list.entity";
 
@@ -35,5 +37,14 @@ export class User {
 
   @OneToMany(type => Item, item => item.buyer, { onDelete: 'CASCADE' })
   basket?: Item[];
+
+  @OneToMany(type => Groupevent, groupevent => groupevent.admin, { onDelete: 'CASCADE' })
+  groupeventsManaged?: Groupevent[];
+
+  @ManyToMany(type => Groupevent, groupevent => groupevent.members)
+  groupeventsList?: Groupevent[];
+
+  @OneToMany(type => Groupdemand, groupdemand => groupdemand.asker, { onDelete: 'CASCADE' })
+  groupdemands?: Groupdemand[];
   
 }
