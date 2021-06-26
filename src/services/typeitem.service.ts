@@ -1,10 +1,10 @@
 import { AbstractService } from "../core/abstract.service";
 import { getCustomRepository } from "typeorm";
-import { TypelistRepository } from "../repositories/typelist.repository";
+import { TypeitemRepository } from "../repositories/typeitem.repository";
 
 
-export class TypelistService extends AbstractService {
-  protected repository = getCustomRepository(TypelistRepository);
+export class TypeitemService extends AbstractService {
+  protected repository = getCustomRepository(TypeitemRepository);
 
   constructor() {
     super();

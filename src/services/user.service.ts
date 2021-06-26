@@ -3,7 +3,7 @@ import { getCustomRepository } from "typeorm";
 import { UserRepository } from "../repositories/user.repository";
 
 
-export class TypegroupService extends AbstractService {
+export class UserService extends AbstractService {
   protected repository = getCustomRepository(UserRepository);
 
   constructor() {
