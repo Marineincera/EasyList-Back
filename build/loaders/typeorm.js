@@ -36,6 +36,14 @@ var __generator = (this && this.__generator) || function (thisArg, body) {
     }
 };
 Object.defineProperty(exports, "__esModule", { value: true });
+var child_entity_1 = require("../entities/child.entity");
+var groupdemand_entity_1 = require("../entities/groupdemand.entity");
+var groupevent_entity_1 = require("../entities/groupevent.entity");
+var item_entity_1 = require("../entities/item.entity");
+var list_entity_1 = require("../entities/list.entity");
+var typeitem_entity_1 = require("../entities/typeitem.entity");
+var typelist_entity_1 = require("../entities/typelist.entity");
+var user_entity_1 = require("../entities/user.entity");
 var typeorm_1 = require("typeorm");
 var typegroup_entity_1 = require("../entities/typegroup.entity");
 exports.default = (function () { return __awaiter(void 0, void 0, void 0, function () {
@@ -46,9 +54,17 @@ exports.default = (function () { return __awaiter(void 0, void 0, void 0, functi
                     port: 3306,
                     username: process.env.EASYLIST_USER,
                     database: "easylist",
-                    password: process.env.EASYLIST_PASSWORD,
+                    password: "Axelmathistomy1991!",
                     entities: [
-                        typegroup_entity_1.Typegroup
+                        typegroup_entity_1.Typegroup,
+                        user_entity_1.User,
+                        list_entity_1.List,
+                        child_entity_1.Child,
+                        typelist_entity_1.Typelist,
+                        item_entity_1.Item,
+                        typeitem_entity_1.Typeitem,
+                        groupevent_entity_1.Groupevent,
+                        groupdemand_entity_1.Groupdemand
                     ],
                     synchronize: true,
                 })];

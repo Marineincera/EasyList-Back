@@ -1,12 +1,12 @@
-import { Child } from "src/entities/child.entity";
-import { Groupdemand } from "src/entities/groupdemand.entity";
-import { Groupevent } from "src/entities/groupevent.entity";
-import { Item } from "src/entities/item.entity";
-import { List } from "src/entities/list.entity";
-import { Typeitem } from "src/entities/typeitem.entity";
-import { Typelist } from "src/entities/typelist.entity";
-import { User } from "src/entities/user.entity";
 import { createConnection } from "typeorm";
+import { Child } from "../entities/child.entity";
+import { Groupdemand } from "../entities/groupdemand.entity";
+import { Groupevent } from "../entities/groupevent.entity";
+import { Item } from "../entities/item.entity";
+import { List } from "../entities/list.entity";
+import { Typeitem } from "../entities/typeitem.entity";
+import { Typelist } from "../entities/typelist.entity";
+import { User } from "../entities/user.entity";
 import { Typegroup } from "../entities/typegroup.entity";
 
 export default async () => {

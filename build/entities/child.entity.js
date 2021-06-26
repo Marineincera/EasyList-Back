@@ -9,35 +9,40 @@ var __metadata = (this && this.__metadata) || function (k, v) {
     if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
 };
 Object.defineProperty(exports, "__esModule", { value: true });
-exports.Typegroup = void 0;
+exports.Child = void 0;
 var typeorm_1 = require("typeorm");
-var groupevent_entity_1 = require("./groupevent.entity");
-var Typegroup = /** @class */ (function () {
-    function Typegroup() {
+var list_entity_1 = require("./list.entity");
+var user_entity_1 = require("./user.entity");
+var Child = /** @class */ (function () {
+    function Child() {
     }
     __decorate([
         typeorm_1.PrimaryGeneratedColumn({ type: "int" }),
         __metadata("design:type", Number)
-    ], Typegroup.prototype, "id", void 0);
+    ], Child.prototype, "id", void 0);
     __decorate([
         typeorm_1.Column({ type: "varchar", length: 205, nullable: false }),
         __metadata("design:type", String)
-    ], Typegroup.prototype, "name", void 0);
+    ], Child.prototype, "pseudo", void 0);
     __decorate([
         typeorm_1.Column({ type: Date, nullable: true }),
         __metadata("design:type", Date)
-    ], Typegroup.prototype, "creationDate", void 0);
+    ], Child.prototype, "registrationDate", void 0);
     __decorate([
-        typeorm_1.Column({ type: "varchar", length: 205, nullable: false }),
+        typeorm_1.Column({ type: "varchar", length: 505, nullable: true }),
         __metadata("design:type", String)
-    ], Typegroup.prototype, "icon", void 0);
+    ], Child.prototype, "avatar", void 0);
     __decorate([
-        typeorm_1.OneToMany(function (type) { return groupevent_entity_1.Groupevent; }, function (groupevent) { return groupevent.typegroup; }, { onDelete: 'CASCADE' }),
+        typeorm_1.OneToMany(function (type) { return list_entity_1.List; }, function (list) { return list.childOwner; }, { onDelete: 'CASCADE' }),
         __metadata("design:type", Array)
-    ], Typegroup.prototype, "groupevents", void 0);
-    Typegroup = __decorate([
-        typeorm_1.Entity("typegroup")
-    ], Typegroup);
-    return Typegroup;
+    ], Child.prototype, "lists", void 0);
+    __decorate([
+        typeorm_1.ManyToOne(function (type) { return user_entity_1.User; }, function (User) { return User.children; }, { onDelete: 'CASCADE' }),
+        __metadata("design:type", user_entity_1.User)
+    ], Child.prototype, "creator", void 0);
+    Child = __decorate([
+        typeorm_1.Entity("child")
+    ], Child);
+    return Child;
 }());
-exports.Typegroup = Typegroup;
+exports.Child = Child;

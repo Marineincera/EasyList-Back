@@ -9,35 +9,35 @@ var __metadata = (this && this.__metadata) || function (k, v) {
     if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
 };
 Object.defineProperty(exports, "__esModule", { value: true });
-exports.Typegroup = void 0;
+exports.Typelist = void 0;
 var typeorm_1 = require("typeorm");
-var groupevent_entity_1 = require("./groupevent.entity");
-var Typegroup = /** @class */ (function () {
-    function Typegroup() {
+var list_entity_1 = require("./list.entity");
+var Typelist = /** @class */ (function () {
+    function Typelist() {
     }
     __decorate([
         typeorm_1.PrimaryGeneratedColumn({ type: "int" }),
         __metadata("design:type", Number)
-    ], Typegroup.prototype, "id", void 0);
+    ], Typelist.prototype, "id", void 0);
     __decorate([
         typeorm_1.Column({ type: "varchar", length: 205, nullable: false }),
         __metadata("design:type", String)
-    ], Typegroup.prototype, "name", void 0);
+    ], Typelist.prototype, "name", void 0);
     __decorate([
         typeorm_1.Column({ type: Date, nullable: true }),
         __metadata("design:type", Date)
-    ], Typegroup.prototype, "creationDate", void 0);
+    ], Typelist.prototype, "creationDate", void 0);
     __decorate([
         typeorm_1.Column({ type: "varchar", length: 205, nullable: false }),
         __metadata("design:type", String)
-    ], Typegroup.prototype, "icon", void 0);
+    ], Typelist.prototype, "icon", void 0);
     __decorate([
-        typeorm_1.OneToMany(function (type) { return groupevent_entity_1.Groupevent; }, function (groupevent) { return groupevent.typegroup; }, { onDelete: 'CASCADE' }),
+        typeorm_1.OneToMany(function (type) { return list_entity_1.List; }, function (list) { return list.typelist; }, { onDelete: 'CASCADE' }),
         __metadata("design:type", Array)
-    ], Typegroup.prototype, "groupevents", void 0);
-    Typegroup = __decorate([
-        typeorm_1.Entity("typegroup")
-    ], Typegroup);
-    return Typegroup;
+    ], Typelist.prototype, "lists", void 0);
+    Typelist = __decorate([
+        typeorm_1.Entity("typelist")
+    ], Typelist);
+    return Typelist;
 }());
-exports.Typegroup = Typegroup;
+exports.Typelist = Typelist;
