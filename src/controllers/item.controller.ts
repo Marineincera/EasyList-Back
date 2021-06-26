@@ -1,6 +1,6 @@
 import { Application} from "express";
-import { ItemService } from "src/services/item.service";
 import { commonController } from "../core/abstract.controller";
+import { ItemService } from "../services/item.service";
 
 /**
  * @param app l'application express
