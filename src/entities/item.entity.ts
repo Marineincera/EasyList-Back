@@ -1,6 +1,7 @@
 import { Column, Entity, JoinTable, ManyToMany, ManyToOne, OneToMany, PrimaryGeneratedColumn } from "typeorm";
 import { Child } from "./child.entity";
 import { List } from "./list.entity";
+import { Typeitem } from "./typeitem.entity";
 import { Typelist } from "./typelist.entity";
 import { User } from "./user.entity";
 
@@ -52,5 +53,6 @@ export class Item {
   @ManyToOne(type => User, user => user.basket, { onDelete: 'CASCADE' })
   buyer!: User;
 
-  
+  @ManyToOne(type => Typeitem, typeitem => typeitem.items, { onDelete: 'CASCADE' })
+  typeitem!: Typeitem;
 }
