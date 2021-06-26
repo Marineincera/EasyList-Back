@@ -1,4 +1,5 @@
 import { Child } from "src/entities/child.entity";
+import { Groupevent } from "src/entities/groupevent.entity";
 import { Item } from "src/entities/item.entity";
 import { List } from "src/entities/list.entity";
 import { Typeitem } from "src/entities/typeitem.entity";
@@ -21,7 +22,8 @@ export default async () => {
         Child,
         Typelist,
         Item,
-        Typeitem
+        Typeitem,
+        Groupevent
       ],
       synchronize: true,
     });
