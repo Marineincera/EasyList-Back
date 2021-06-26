@@ -1,5 +1,6 @@
-import { Column, Entity, ManyToOne, PrimaryGeneratedColumn } from "typeorm";
+import { Column, Entity, ManyToMany, ManyToOne, PrimaryGeneratedColumn } from "typeorm";
 import { Child } from "./child.entity";
+import { Item } from "./item.entity";
 import { Typelist } from "./typelist.entity";
 import { User } from "./user.entity";
 
@@ -22,12 +23,15 @@ export class List {
   @Column({ type: "enum", enum: StatusList, default: StatusList.PUBLIC})
   statusList!: StatusList;
     
-  @ManyToOne(type => User, User => User.lists, { onDelete: 'CASCADE' })
+  @ManyToOne(type => User, user => user.lists, { onDelete: 'CASCADE' })
   creator!: User;
 
-  @ManyToOne(type => Child, Child => Child.lists, { onDelete: 'CASCADE' })
+  @ManyToOne(type => Child, child => child.lists, { onDelete: 'CASCADE' })
   childOwner?: Child;
 
-  @ManyToOne(type => Typelist, Typelist => Typelist.lists, { onDelete: 'CASCADE' })
+  @ManyToOne(type => Typelist, typelist => typelist.lists, { onDelete: 'CASCADE' })
   typelist!: Typelist;
+
+  @ManyToMany(type => Item, item => item.lists)
+  items!: Item[];
 }

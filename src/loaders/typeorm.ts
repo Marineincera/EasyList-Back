@@ -1,4 +1,5 @@
 import { Child } from "src/entities/child.entity";
+import { Item } from "src/entities/item.entity";
 import { List } from "src/entities/list.entity";
 import { Typelist } from "src/entities/typelist.entity";
 import { User } from "src/entities/user.entity";
@@ -17,7 +18,8 @@ export default async () => {
         User,
         List,
         Child,
-        Typelist
+        Typelist,
+        Item
       ],
       synchronize: true,
     });

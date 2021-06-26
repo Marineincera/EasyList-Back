@@ -1,5 +1,6 @@
-import { Column, Entity, OneToMany, PrimaryGeneratedColumn } from "typeorm";
+import { Column, Entity, ManyToMany, OneToMany, PrimaryGeneratedColumn } from "typeorm";
 import { Child } from "./child.entity";
+import { Item } from "./item.entity";
 import { List } from "./list.entity";
 
 
@@ -28,4 +29,11 @@ export class User {
 
   @OneToMany(type => Child, child => child.creator, { onDelete: 'CASCADE' })
   children?: Child[];
+
+  @OneToMany(type => Item, item => item.owner, { onDelete: 'CASCADE' })
+  items?: Item[];
+
+  @OneToMany(type => Item, item => item.buyer, { onDelete: 'CASCADE' })
+  basket?: Item[];
+  
 }
